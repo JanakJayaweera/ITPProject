@@ -29,7 +29,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import itpjfml.*;
+import javafx.fxml.FXML;
 /**
  *
  * @author USER
@@ -43,12 +43,17 @@ public class FXMLDocumentController implements Initializable {
         // TODO
     }
     
-    public void mouseClickEvent(){
-        FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("/LoginPage.fxml"));
+    /**
+     *
+     */
+    @FXML
+    public void userSelect(){
+        FXMLLoader fxmlLoader = new FXMLLoader (getClass().getResource("LoginPage.fxml"));
         try {
             Parent root = (Parent)fxmlLoader.load();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
+            stage.setFullScreen(true);
             stage.show();
             ITPJFML.window.close();
             
